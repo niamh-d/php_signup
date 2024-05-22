@@ -32,15 +32,13 @@ require_once 'includes/signup_view.inc.php';
             <h3>Sign up</h3>
 
             <form action="includes/signup.inc.php" method="post">
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <input type="text" name="email" placeholder="Email">
+                <?php signup_inputs(); ?>
                 <button>Sign up</button>
-<div class="form-messages-container">
+                <div class="form-messages-container">
                 <?php
                 render_signup_messages();
                 ?>
-       </div>
+                </div>
             </form>
         </div>
     </div>
