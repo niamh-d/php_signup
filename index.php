@@ -36,11 +36,11 @@ require_once 'includes/signup_view.inc.php';
                 <input type="password" name="password" placeholder="Password">
                 <input type="text" name="email" placeholder="Email">
                 <button>Sign up</button>
-
+<div class="form-messages-container">
                 <?php
-                check_signup_errors();
+                render_signup_messages();
                 ?>
-       
+       </div>
             </form>
         </div>
     </div>
