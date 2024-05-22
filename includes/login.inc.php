@@ -37,6 +37,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             die();
         }
 
+        $newSessionId = session_create_id();
+        $sessionId = $newSessionId . "_" . $user['id'];
+        session_id($sessionId);
+
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_username'] = htmlspecialchars($user['username']);
+        $_SESSION['user_email'] = htmlspecialchars($user['email']);
+
+        $_SESSION["last_regenerated"] = time();
+
+        header("Location: ../index.php?login=success");
+
+        $pdo = null;
+        $stmt = null;
+        die();
+
     } catch (PDOException $e) {
         die("Query failed: " . $e->getMessage());
     }
