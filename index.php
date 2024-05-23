@@ -47,6 +47,9 @@ require_once 'includes/login_view.inc.php';
                 </div>
             </form>
         </div>
+        <div>
+            <a href="includes/logout.inc.php">Logout</a>
+        </div>
     </div>
 </body>
 
