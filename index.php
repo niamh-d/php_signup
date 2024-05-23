@@ -33,32 +33,38 @@ require_once 'includes/login_view.inc.php';
         </p>
         </div>
         <?php
-        if (!isset($_SESSION['user_id'])) {
-            echo '<div class="login">
-            <h3>Login</h3>
+        if (!isset($_SESSION['user_id'])) { ?>
+                    <div class="login">
+                    <h3>Login</h3>
 
-            <form action="includes/login.inc.php" method="post">
-                <input type="text" name="username" placeholder="Username">
-                <input type="password" name="password" placeholder="Password">
-                <button>Login</button>
-                <div class="form-messages-container">';
-            render_login_messages();
-            echo '</div>
-            </form>
-        </div>
-        <div class="signup">
-            <h3>Sign up</h3>
+                    <form action="includes/login.inc.php" method="post">
+                        <input type="text" name="username" placeholder="Username">
+                        <input type="password" name="password" placeholder="Password">
+                        <button>Login</button>
+                        <div class="form-messages-container">
+                    <?php
+                    render_login_messages();
+                    ?>
+                        </div>
+             
+                    </form>
+                </div>
+                <div class="signup">
+                    <h3>Sign up</h3>
 
-            <form action="includes/signup.inc.php" method="post">';
-            signup_inputs();
-            echo '<button>Sign up</button>
-                <div class="form-messages-container">';
-            render_signup_messages();
-            echo '</div>
-            </form>
-        </div>';
-        }
-        ?>
+                    <form action="includes/signup.inc.php" method="post">
+                    <?php
+                    signup_inputs();
+                    ?>
+                   <button>Sign up</button>
+                        <div class="form-messages-container">
+                        <?php
+                        render_signup_messages();
+                        ?>
+                    </div>
+                    </form>
+                </div>
+       <?php } ?>
     </div>
 </body>
 
